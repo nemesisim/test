@@ -43,7 +43,7 @@ cd 'C:\Program Files\winlogbeat\'
 
 # Get Winlogbeat config
 Write-Output "[+] - Downloading Winlogbeat config"
-Invoke-WebRequest -Uri https://raw.githubusercontent.com/CptOfEvilMinions/BlogProjects/master/sysmon-winlogbeat-communityid/conf/winlogbeat/winlogbeat.yml -OutFile winlogbeat.yml
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/nemesisim/test/main/winlogbeat.yml -OutFile winlogbeat.yml
 
 # Set Logstash server
 Write-Output "[+] - Setting Logstash in Winlogbeat config"
