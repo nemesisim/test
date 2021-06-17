@@ -19,7 +19,7 @@ Expand-Archive .\Sysmon.zip -DestinationPath .
 
 # Download SwiftOnSecurity config
 Write-Output "[+] - Download SwiftOnSeccurity Sysmon config"
-Invoke-WebRequest -Uri https://raw.githubusercontent.com/SwiftOnSecurity/sysmon-config/master/sysmonconfig-export.xml -OutFile sysmonconfig-export.xml
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/nemesisim/test/main/sysmonconfig-export.xml -OutFile sysmonconfig-export.xml
 
 # Install Sysmon
 Write-Output "[+] - Starting Sysmon with SwiftOnSeccurity config"
