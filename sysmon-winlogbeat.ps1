@@ -11,7 +11,8 @@ $WINLOGBEAT_VERSION="7.13.2"
 # Download Sysmon
 cd $ENV:TMP
 Write-Output "[+] - Downloading Sysmon"
-Invoke-WebRequest -Uri https://download.sysinternals.com/files/Sysmon.zip -OutFile Sysmon.zip
+#Invoke-WebRequest -Uri https://download.sysinternals.com/files/Sysmon.zip -OutFile Sysmon.zip
+iwr -uri "https://download.sysinternals.com/files/Sysmon.zip" -outfile Sysmon.zip
 
 # Unzip Sysmon
 Write-Output "[+] - Unzipping Sysmon"
@@ -19,7 +20,8 @@ Expand-Archive .\Sysmon.zip -DestinationPath .
 
 # Download SwiftOnSecurity config
 Write-Output "[+] - Download SwiftOnSeccurity Sysmon config"
-Invoke-WebRequest -Uri https://raw.githubusercontent.com/nemesisim/test/main/sysmonconfig-export.xml -OutFile sysmonconfig-export.xml
+#Invoke-WebRequest -Uri https://raw.githubusercontent.com/nemesisim/test/main/sysmonconfig-export.xml -OutFile sysmonconfig-export.xml
+iwr -uri "https://raw.githubusercontent.com/nemesisim/test/main/sysmonconfig-export.xml" -outfile sysmonconfig-export.xml
 
 # Install Sysmon
 Write-Output "[+] - Starting Sysmon with SwiftOnSeccurity config"
@@ -30,7 +32,8 @@ cd $ENV:TEMP
 
 # Download Winlogbeat
 Write-Output "[+] - Downloading Winlogbeat"
-Invoke-WebRequest -Uri https://artifacts.elastic.co/downloads/beats/winlogbeat/winlogbeat-$WINLOGBEAT_VERSION-windows-x86_64.zip -OutFile winlogbeat-$WINLOGBEAT_VERSION-windows-x86_64.zip
+#Invoke-WebRequest -Uri https://artifacts.elastic.co/downloads/beats/winlogbeat/winlogbeat-$WINLOGBEAT_VERSION-windows-x86_64.zip -OutFile winlogbeat-$WINLOGBEAT_VERSION-windows-x86_64.zip
+iwr -uri "https://artifacts.elastic.co/downloads/beats/winlogbeat/winlogbeat-$WINLOGBEAT_VERSION-windows-x86_64.zip" -outfile winlogbeat-$WINLOGBEAT_VERSION-windows-x86_64.zip
 
 # Extract zip
 Write-Output "[+] - Unzipping Winlogbeat"
@@ -43,7 +46,9 @@ cd 'C:\Program Files\winlogbeat\'
 
 # Get Winlogbeat config
 Write-Output "[+] - Downloading Winlogbeat config"
-Invoke-WebRequest -Uri https://raw.githubusercontent.com/nemesisim/test/main/winlogbeat.yml -OutFile winlogbeat.yml
+#Invoke-WebRequest -Uri https://raw.githubusercontent.com/nemesisim/test/main/winlogbeat.yml -OutFile winlogbeat.yml
+iwr -uri "https://raw.githubusercontent.com/nemesisim/test/main/winlogbeat.yml" -outfile winlogbeat.yml
+
 
 # Set Logstash server
 Write-Output "[+] - Setting Logstash in Winlogbeat config"
