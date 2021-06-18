@@ -1,8 +1,8 @@
 ################################################# Command Line Arguments #################################################
-param (
-  [parameter(Mandatory=$true)][string]$logstash_ip_addr,
-  [parameter(Mandatory=$true)][string]$logstash_port
-)
+#param (
+  #[parameter(Mandatory=$true)][string]$logstash_ip_addr,
+ # [parameter(Mandatory=$true)][string]$logstash_port
+#)
 
 ################################################# Global vars #################################################
 $WINLOGBEAT_VERSION="7.13.2"
@@ -51,9 +51,9 @@ iwr -uri "https://raw.githubusercontent.com/nemesisim/test/main/winlogbeat.yml" 
 
 
 # Set Logstash server
-Write-Output "[+] - Setting Logstash in Winlogbeat config"
-(Get-Content -Path .\winlogbeat.yml -Raw) -replace "logstash_ip_addr","$logstash_ip_addr" | Set-Content -Path .\winlogbeat.yml
-(Get-Content -Path .\winlogbeat.yml -Raw) -replace "logstash_port","$logstash_port" | Set-Content -Path .\winlogbeat.yml
+#Write-Output "[+] - Setting Logstash in Winlogbeat config"
+#(Get-Content -Path .\winlogbeat.yml -Raw) -replace "logstash_ip_addr","$logstash_ip_addr" | Set-Content -Path .\winlogbeat.yml
+#(Get-Content -Path .\winlogbeat.yml -Raw) -replace "logstash_port","$logstash_port" | Set-Content -Path .\winlogbeat.yml
 
 # Install Winlogbeat
 Write-Output "[+] - Install Winlogbeat as a service"
