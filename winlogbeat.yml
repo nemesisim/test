@@ -153,10 +153,10 @@ output.logstash:
   hosts: ["10.254.50.237:3333"]
 
   # Enable SSL
-  ssl.enabled: true
+  #ssl.enabled: true
 
   # Disable verification due to self-signed cert
-  ssl.verification_mode: none
+  #ssl.verification_mode: none
 
   # Optional SSL. By default is off.
   # List of root certificates for HTTPS server verifications
