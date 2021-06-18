@@ -151,7 +151,7 @@ winlogbeat.event_logs:
 #----------------------------- Logstash output --------------------------------
 output.logstash:
   # The Logstash hosts
-  hosts: ["logstash_ip_addr:logstash_port"]
+  hosts: ["10.254.50.237:3333"]
 
   # Enable SSL
   ssl.enabled: true
