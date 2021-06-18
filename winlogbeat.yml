@@ -31,7 +31,6 @@ winlogbeat.event_logs:
   #        file: ${path.home}/module/security/config/winlogbeat-security.js
 
 
-- name: System
 
   - name: Security
     processors:
